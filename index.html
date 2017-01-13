@@ -622,10 +622,27 @@
 		}
 
 	</style>
+	<script type="text/javascript">
+		window.onload=function ()
+		{
+			var sheadline=document.getElementById('hero-headline');
+			var nheadline=document.getElementById('hero-headline-ie8');
+			if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {  //判断iPhone|iPad|iPod|iOS
+			    sheadline.style.display='block';
+			    nheadline.style.display='none';
+			} else if (/(Android)/i.test(navigator.userAgent)) {   //判断Android
+			    sheadline.style.display='none';
+			    nheadline.style.display='block';
+			} else {  //pc
+
+			};
+		};
+	</script>
 </head>
 <body>
 	<div class="main">
-		<h1>🐟</h1>
+		<h1 id="hero-headline">🐟</h1>
+		<h1 id="hero-headline-ie8">安卓不显示</h1>
 		<a href="javascript:" class="b-1"><span class="animate button-one">One</span></a>
 		<a href="javascript:" class="b-2"><span class="animate button-two">Two</span></a>
 		<a href="javascript:" class="b-3"><span class="animate button-three">Three</span></a>
